@@ -7,7 +7,7 @@
       fixed
       app
     >
-      <v-list>
+      <v-list dense>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -99,6 +99,16 @@ export default {
           icon: "mdi-chart-bubble",
           title: "Reportes",
           to: "/reports",
+        },
+        {
+          icon: "mdi-chart-bubble",
+          title: "Ventas",
+          to: "/sales",
+        },
+        {
+          icon: "mdi-chart-bubble",
+          title: "Turnos",
+          to: "/appointments",
         },
       ],
       miniVariant: false,
