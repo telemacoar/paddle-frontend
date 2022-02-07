@@ -77,28 +77,8 @@ export default {
         },
         {
           icon: "mdi-chart-bubble",
-          title: "Productos",
-          to: "/products",
-        },
-        {
-          icon: "mdi-chart-bubble",
-          title: "Canchas",
-          to: "/courts",
-        },
-        {
-          icon: "mdi-chart-bubble",
-          title: "Clientes",
-          to: "/clients",
-        },
-        {
-          icon: "mdi-chart-bubble",
           title: "Stock",
           to: "/stock",
-        },
-        {
-          icon: "mdi-chart-bubble",
-          title: "Reportes",
-          to: "/reports",
         },
         {
           icon: "mdi-chart-bubble",
@@ -109,6 +89,11 @@ export default {
           icon: "mdi-chart-bubble",
           title: "Turnos",
           to: "/appointments",
+        },
+        {
+          icon: "mdi-chart-bubble",
+          title: "Reportes",
+          to: "/reports",
         },
       ],
       miniVariant: false,

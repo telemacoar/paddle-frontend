@@ -162,7 +162,7 @@ export default {
   },
   methods: {
     async load() {
-      const data = await this.$axios.$get("http://localhost:8000/api/clients/");
+      const data = await this.$axios.$get("/api/clients/");
       this.items = data.results;
       console.log(data);
     },
@@ -178,8 +178,11 @@ export default {
       this.dialogDelete = true;
     },
 
-    deleteItemConfirm() {
+    async deleteItemConfirm() {
+      await this.$axios.$delete("/api/clients/" + this.editedItem.id);
+
       this.items.splice(this.editedIndex, 1);
+
       this.closeDelete();
     },
 
@@ -202,15 +205,12 @@ export default {
     async save() {
       if (this.editedIndex > -1) {
         await this.$axios.$put(
-          "http://localhost:8000/api/clients/" + this.editedItem.id,
+          "/api/clients/" + this.editedItem.id,
           this.editedItem
         );
         Object.assign(this.items[this.editedIndex], this.editedItem);
       } else {
-        await this.$axios.$post(
-          "http://localhost:8000/api/clients/",
-          this.editedItem
-        );
+        await this.$axios.$post("/api/clients/", this.editedItem);
 
         this.items.push(this.editedItem);
       }
@@ -270,10 +270,7 @@ export default {
     } else {
       this.items.push(this.editedItem);
     }
-    await this.$axios.$post(
-      "http://localhost:8000/api/clients/",
-      this.editedItem
-    );
+    await this.$axios.$post("/api/clients/", this.editedItem);
     this.close();
   },
 };
