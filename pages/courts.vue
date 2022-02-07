@@ -85,6 +85,7 @@
             mdi-pencil
           </v-icon>
           <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
+          <v-icon small @click="timetable(item)">mdi-cog-outline </v-icon>
         </template>
         <template v-slot:no-data> Sin datos </template>
       </v-data-table>
@@ -171,6 +172,9 @@ export default {
         this.items.push(this.editedItem);
       }
       this.close();
+    },
+    timetable(item) {
+      console.log(item);
     },
   },
   computed: {

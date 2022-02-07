@@ -10,7 +10,7 @@
       >
         <template v-slot:top>
           <v-toolbar flat>
-            <v-toolbar-title>Clientes</v-toolbar-title>
+            <v-toolbar-title>Productos</v-toolbar-title>
 
             <v-spacer></v-spacer>
 

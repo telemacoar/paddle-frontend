@@ -6,7 +6,6 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _ac66da0c = () => interopDefault(import('../pages/appointments.vue' /* webpackChunkName: "pages/appointments" */))
 const _b6ec439c = () => interopDefault(import('../pages/clients.vue' /* webpackChunkName: "pages/clients" */))
-const _266f3df0 = () => interopDefault(import('../pages/config.vue' /* webpackChunkName: "pages/config" */))
 const _5229cb0e = () => interopDefault(import('../pages/courts.vue' /* webpackChunkName: "pages/courts" */))
 const _3ce028da = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _4cc67aaa = () => interopDefault(import('../pages/products.vue' /* webpackChunkName: "pages/products" */))
@@ -34,10 +33,6 @@ export const routerOptions = {
     path: "/clients",
     component: _b6ec439c,
     name: "clients"
-  }, {
-    path: "/config",
-    component: _266f3df0,
-    name: "config"
   }, {
     path: "/courts",
     component: _5229cb0e,
