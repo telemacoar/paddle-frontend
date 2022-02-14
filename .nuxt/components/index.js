@@ -1,4 +1,5 @@
 export { default as Clients } from '../../components/Clients.vue'
+export { default as PacienteAutocomplete } from '../../components/PacienteAutocomplete.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -1,5 +1,36 @@
 <template>
-  <div></div>
+  <v-row>
+    <v-col>
+      <v-card>
+        <v-card-text>
+          <!-- <v-img max-height="150" max-width="250" src="/clients.jpg"></v-img> -->
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text @click="$router.push('/clients')">Stock</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+    <v-col>
+      <v-card>
+        <v-card-text>
+          <!-- <v-img max-height="150" max-width="250" src="/products.jpg"></v-img> -->
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text @click="$router.push('/products')">Ventas</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+    <v-col>
+      <v-card>
+        <v-card-text>
+          <!-- <v-img max-height="150" max-width="250" src="/courts.jpg"></v-img> -->
+        </v-card-text>
+        <v-card-actions>
+          <v-btn text @click="$router.push('/courts')">Estadisticas</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

@@ -7,6 +7,13 @@
     "_name": "_ac66da0c"
   },
   {
+    "name": "change",
+    "path": "/change",
+    "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/change.vue",
+    "chunkName": "pages/change",
+    "_name": "_3c260a76"
+  },
+  {
     "name": "clients",
     "path": "/clients",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/clients.vue",

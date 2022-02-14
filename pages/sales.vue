@@ -20,18 +20,25 @@
               label="Buscar"
               single-line
               hide-details
+              small
             ></v-text-field>
+
             <v-spacer></v-spacer>
+
             <v-dialog v-model="dialog" max-width="600px">
               <template v-slot:activator="{ on, attrs }">
+                <v-btn color="primary" dark text>
+                  <v-icon>mdi-reload</v-icon>
+                </v-btn>
                 <v-btn
                   color="primary"
                   dark
                   class="mb-2"
                   v-bind="attrs"
                   v-on="on"
+                  text
                 >
-                  <v-icon>mdi-text-box-plus</v-icon> Nuevo
+                  <v-icon>mdi-text-box-plus</v-icon>
                 </v-btn>
               </template>
               <v-card>
@@ -42,6 +49,24 @@
                   <v-container>
                     <v-row>
                       <v-col cols="12" sm="6" md="4">
+                        <v-autocomplete
+                          item-text="name"
+                          item-value="id"
+                          :items="clients"
+                          v-model="editedItem.cliente_id"
+                          label="Cliente"
+                        ></v-autocomplete>
+                        <v-autocomplete
+                          item-text="name"
+                          item-value="id"
+                          :items="products"
+                          v-model="editedItem.product_id"
+                          label="Producto"
+                        ></v-autocomplete>
+                        <v-text-field
+                          v-model="editedItem.name"
+                          label="Nombre"
+                        ></v-text-field>
                         <v-text-field
                           v-model="editedItem.name"
                           label="Nombre"
@@ -53,7 +78,7 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
                   <v-btn color="blue darken-1" text @click="close">
-                    Cancel
+                    Cancelar
                   </v-btn>
                   <v-btn color="blue darken-1" text @click="save">
                     Guardar
@@ -85,7 +110,9 @@
             mdi-pencil
           </v-icon>
           <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
-          <v-icon small @click="timetable(item)">mdi-cog-box </v-icon>
+        </template>
+        <template v-slot:item.date="{ item }">
+          {{ item.date.substr(0, 10) }}
         </template>
         <template v-slot:no-data> Sin datos </template>
       </v-data-table>
@@ -106,6 +133,8 @@ export default {
       { text: "Precio", value: "price" },
       { text: "Accion", value: "actions" },
     ],
+    clients: [],
+    products: [],
 
     items: [],
     editedIndex: -1,
@@ -132,7 +161,12 @@ export default {
     async load() {
       const data = await this.$axios.$get("/api/sales/");
       this.items = data.results;
-      console.log(data);
+      const data_2 = await this.$axios.$get("/api/clients/");
+      this.clients = data_2.results;
+      console.log(data_2);
+      const data_3 = await this.$axios.$get("/api/products/");
+      this.products = data_3.results;
+      console.log(data_3);
     },
     editItem(item) {
       this.editedIndex = this.items.indexOf(item);

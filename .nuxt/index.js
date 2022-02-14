@@ -16,6 +16,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_a8c9c2e8 from 'nuxt_plugin_plugin_a8c9c2e8' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_8d10de3c from 'nuxt_plugin_plugin_8d10de3c' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_axios_402488bc from 'nuxt_plugin_axios_402488bc' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_vuetabulator_3fb31676 from 'nuxt_plugin_vuetabulator_3fb31676' // Source: ../plugins/vuetabulator.js (mode: 'client')
 import nuxt_plugin_auth_8f421d64 from 'nuxt_plugin_auth_8f421d64' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -220,6 +221,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_axios_402488bc === 'function') {
     await nuxt_plugin_axios_402488bc(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuetabulator_3fb31676 === 'function') {
+    await nuxt_plugin_vuetabulator_3fb31676(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_8f421d64 === 'function') {

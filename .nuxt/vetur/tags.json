@@ -1,5 +1,8 @@
 {
   "Clients": {
     "description": "Auto imported from components/Clients.vue"
+  },
+  "PacienteAutocomplete": {
+    "description": "Auto imported from components/PacienteAutocomplete.vue"
   }
 }

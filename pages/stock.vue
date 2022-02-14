@@ -7,6 +7,7 @@
         :search="search"
         dense
         hide-default-footer
+        group-by="type"
       >
         <template v-slot:top>
           <v-toolbar flat>
@@ -85,8 +86,11 @@
             mdi-pencil
           </v-icon>
           <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
-          <v-icon small @click="timetable(item)">mdi-cog-box </v-icon>
         </template>
+        <template v-slot:item.date="{ item }">
+          {{ item.date.substr(0, 10) }}
+        </template>
+
         <template v-slot:no-data> Sin datos </template>
       </v-data-table>
     </template>
@@ -103,7 +107,7 @@ export default {
       { text: "Producto", value: "product" },
       { text: "Cantidad", value: "amount" },
       { text: "Precio", value: "price" },
-      { text: "Tipo", value: "income" },
+      { text: "Tipo", value: "type" },
       { text: "Accion", value: "actions" },
     ],
 
@@ -130,7 +134,7 @@ export default {
   },
   methods: {
     async load() {
-      const data = await this.$axios.$get("/api/courts/");
+      const data = await this.$axios.$get("/api/stocks/");
       this.items = data.results;
       console.log(data);
     },
@@ -147,7 +151,7 @@ export default {
     },
 
     async deleteItemConfirm() {
-      await this.$axios.$delete("/api/courts/" + this.editedItem.id);
+      await this.$axios.$delete("/api/stocks/" + this.editedItem.id);
 
       this.items.splice(this.editedIndex, 1);
 
@@ -173,13 +177,13 @@ export default {
     async save() {
       if (this.editedIndex > -1) {
         await this.$axios.$put(
-          "/api/courts/" + this.editedItem.id,
+          "/api/stocks/" + this.editedItem.id,
           this.editedItem
         );
         Object.assign(this.items[this.editedIndex], this.editedItem);
       } else {
         console.log(this.editedItem);
-        await this.$axios.$post("/api/courts/", this.editedItem);
+        await this.$axios.$post("/api/stocks/", this.editedItem);
 
         this.items.push(this.editedItem);
       }
@@ -242,7 +246,7 @@ export default {
     } else {
       this.items.push(this.editedItem);
     }
-    await this.$axios.$post("/api/courts/", this.editedItem);
+    await this.$axios.$post("/api/stocks/", this.editedItem);
     this.close();
   },
 };

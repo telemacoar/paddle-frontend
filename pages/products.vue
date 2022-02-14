@@ -7,6 +7,7 @@
         :search="search"
         dense
         hide-default-footer
+        disable-pagination
       >
         <template v-slot:top>
           <v-toolbar flat>
@@ -42,12 +43,6 @@
                 <v-card-text>
                   <v-container>
                     <v-row>
-                      <v-col cols="12" sm="6" md="4">
-                        <v-text-field
-                          v-model="editedItem.code"
-                          label="Codigo"
-                        ></v-text-field>
-                      </v-col>
                       <v-col cols="12" sm="6" md="4">
                         <v-text-field
                           v-model="editedItem.name"
@@ -140,7 +135,6 @@ export default {
     dialog: false,
     dialogDelete: false,
     headers: [
-      { text: "Codigo", value: "code" },
       { text: "Nombre", value: "name" },
       { text: "Descripcion", value: "description" },
       { text: "Precio Compra", value: "price_buy" },
@@ -155,22 +149,20 @@ export default {
     editedIndex: -1,
     search: "",
     editedItem: {
-      code: "",
       name: "",
       description: "",
-      price_buy: "",
-      price_sell: "",
-      iva: "",
+      price_buy: 0,
+      price_sell: 0,
+      iva: 0,
       picture: "",
       stockeable: true,
     },
     defaultItem: {
-      code: "",
       name: "",
       description: "",
-      price_buy: "",
-      price_sell: "",
-      iva: "",
+      price_buy: 0,
+      price_sell: 0,
+      iva: 0,
       picture: "",
       stockeable: true,
     },
