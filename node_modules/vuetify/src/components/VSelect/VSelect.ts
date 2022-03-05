@@ -325,6 +325,10 @@ export default baseMixins.extend<options>().extend({
       for (let index = 0; index < arr.length; ++index) {
         const item = arr[index]
 
+        // Do not return null values if existant (#14421)
+        if (item == null) {
+          continue
+        }
         // Do not deduplicate headers or dividers (#12517)
         if (item.header || item.divider) {
           uniqueValues.set(item, item)
@@ -664,7 +668,7 @@ export default baseMixins.extend<options>().extend({
 
       // If menu is active, allow default
       // listIndex change from menu
-      if (this.isMenuActive && keyCode !== keyCodes.tab) {
+      if (this.isMenuActive && [keyCodes.up, keyCodes.down, keyCodes.home, keyCodes.end, keyCodes.enter].includes(keyCode)) {
         this.$nextTick(() => {
           menu.changeListIndex(e)
           this.$emit('update:list-index', menu.listIndex)

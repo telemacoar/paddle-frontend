@@ -108,11 +108,6 @@ export default VAutocomplete.extend({
 
       this.$nextTick(this.updateSelf)
     },
-    onFilteredItemsChanged (val: never[], oldVal: never[]) {
-      if (!this.autoSelectFirst) return
-
-      VAutocomplete.options.methods.onFilteredItemsChanged.call(this, val, oldVal)
-    },
     onKeyDown (e: KeyboardEvent) {
       const keyCode = e.keyCode
 
@@ -184,7 +179,7 @@ export default VAutocomplete.extend({
       }
     },
     setValue (value?: any) {
-      VSelect.options.methods.setValue.call(this, value ?? this.internalSearch)
+      VSelect.options.methods.setValue.call(this, value === undefined ? this.internalSearch : value)
     },
     updateEditing () {
       const value = this.internalValue.slice()

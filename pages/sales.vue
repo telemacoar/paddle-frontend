@@ -48,7 +48,7 @@
                 <v-card-text>
                   <v-container>
                     <v-row>
-                      <v-col cols="12" sm="6" md="4">
+                      <v-col>
                         <v-autocomplete
                           item-text="name"
                           item-value="id"
@@ -56,21 +56,69 @@
                           v-model="editedItem.cliente_id"
                           label="Cliente"
                         ></v-autocomplete>
-                        <v-autocomplete
-                          item-text="name"
-                          item-value="id"
-                          :items="products"
-                          v-model="editedItem.product_id"
-                          label="Producto"
-                        ></v-autocomplete>
-                        <v-text-field
-                          v-model="editedItem.name"
-                          label="Nombre"
-                        ></v-text-field>
-                        <v-text-field
-                          v-model="editedItem.name"
-                          label="Nombre"
-                        ></v-text-field>
+
+                        <v-row>
+                          <v-data-table
+                            :items="itemsVenta"
+                            :headers="headersVenta"
+                            disable-pagination
+                            hide-default-footer
+                          >
+                            <template v-slot:top>
+                              <v-toolbar flat>
+                                <v-toolbar-title small> Items</v-toolbar-title>
+                                <v-dialog v-model="dialogItem" max-width="600px"
+                                  ><template v-slot:activator="{ on, attrs }">
+                                    <v-btn color="primary" dark text>
+                                      <v-icon>mdi-reload</v-icon>
+                                    </v-btn>
+                                    <v-btn
+                                      color="primary"
+                                      dark
+                                      class="mb-2"
+                                      v-bind="attrs"
+                                      v-on="on"
+                                      text
+                                    >
+                                      <v-icon>mdi-text-box-plus</v-icon>
+                                    </v-btn>
+                                  </template>
+                                  <v-card small>
+                                    <v-card-title small
+                                      >Ingrese items</v-card-title
+                                    >
+                                    <v-card-text small>
+                                      <v-row>
+                                        <v-col>
+                                          <v-autocomplete
+                                            label="Producto"
+                                            :items="products"
+                                          ></v-autocomplete
+                                        ></v-col>
+                                        <v-col
+                                          ><v-text-field
+                                            label="Cantidad"
+                                            type="number"
+                                          ></v-text-field
+                                        ></v-col>
+                                        <v-col
+                                          ><v-text-field
+                                            label="Precio"
+                                            type="number"
+                                          ></v-text-field
+                                        ></v-col>
+                                      </v-row>
+                                    </v-card-text>
+                                    <v-card-actions>
+                                      <v-spacer></v-spacer>
+                                      <v-btn color="success">Agregar</v-btn>
+                                    </v-card-actions>
+                                  </v-card>
+                                </v-dialog></v-toolbar
+                              >
+                            </template>
+                          </v-data-table>
+                        </v-row>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -135,6 +183,14 @@ export default {
     ],
     clients: [],
     products: [],
+    itemsVenta: [],
+    headersVenta: [
+      { text: "Producto", value: "product" },
+      { text: "Cantidad", value: "amount" },
+      { text: "Precio", value: "price" },
+      { text: "Total", value: "totalprice" },
+    ],
+    dialogItem: false,
 
     items: [],
     editedIndex: -1,
