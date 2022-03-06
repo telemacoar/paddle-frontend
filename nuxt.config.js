@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - paddle',
+    titleTemplate: '%s',
     title: 'Paddle',
     htmlAttrs: {
       lang: 'en'
@@ -51,7 +51,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseUrl: "http://localhost:8000"
+    baseUrl: ENV_HOST || "http://localhost:8000"
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
