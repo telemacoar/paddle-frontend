@@ -1,5 +1,5 @@
-export const Clients = () => import('../../components/Clients.vue' /* webpackChunkName: "components/clients" */).then(c => wrapFunctional(c.default || c))
-export const PacienteAutocomplete = () => import('../../components/PacienteAutocomplete.vue' /* webpackChunkName: "components/paciente-autocomplete" */).then(c => wrapFunctional(c.default || c))
+export { default as Clients } from '../../components/Clients.vue'
+export { default as PacienteAutocomplete } from '../../components/PacienteAutocomplete.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
