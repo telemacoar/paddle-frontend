@@ -51,7 +51,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseUrl: "http://api.paddle.telemaco.ar:8080"//process.env.ENV_HOST || "http://localhost:8000"
+    baseURL: "http://api.paddle.telemaco.ar:8080"//process.env.ENV_HOST || "http://localhost:8000"
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
