@@ -3,70 +3,60 @@
     "name": "appointments",
     "path": "/appointments",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/appointments.vue",
-    "chunkName": "pages/appointments",
-    "_name": "_ac66da0c"
+    "chunkName": "pages/appointments"
   },
   {
     "name": "change",
     "path": "/change",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/change.vue",
-    "chunkName": "pages/change",
-    "_name": "_3c260a76"
+    "chunkName": "pages/change"
   },
   {
     "name": "clients",
     "path": "/clients",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/clients.vue",
-    "chunkName": "pages/clients",
-    "_name": "_b6ec439c"
+    "chunkName": "pages/clients"
   },
   {
     "name": "courts",
     "path": "/courts",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/courts.vue",
-    "chunkName": "pages/courts",
-    "_name": "_5229cb0e"
+    "chunkName": "pages/courts"
   },
   {
     "name": "login",
     "path": "/login",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/login.vue",
-    "chunkName": "pages/login",
-    "_name": "_3ce028da"
+    "chunkName": "pages/login"
   },
   {
     "name": "products",
     "path": "/products",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/products.vue",
-    "chunkName": "pages/products",
-    "_name": "_4cc67aaa"
+    "chunkName": "pages/products"
   },
   {
     "name": "reports",
     "path": "/reports",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/reports.vue",
-    "chunkName": "pages/reports",
-    "_name": "_bf9c132e"
+    "chunkName": "pages/reports"
   },
   {
     "name": "sales",
     "path": "/sales",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/sales.vue",
-    "chunkName": "pages/sales",
-    "_name": "_4310bbb6"
+    "chunkName": "pages/sales"
   },
   {
     "name": "stock",
     "path": "/stock",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/stock.vue",
-    "chunkName": "pages/stock",
-    "_name": "_d8c15680"
+    "chunkName": "pages/stock"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/pwiniarczyk/cetaru/telemaco.ar/paddle/front/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_17e8487c"
+    "chunkName": "pages/index"
   }
 ]
